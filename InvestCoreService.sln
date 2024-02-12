@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34408.163
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Brokers", "Brokers", "{C7EA9CC4-F086-491A-9A2A-6E47466AC11D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvestBroker.FinamAPI", "InvestBroker.FinamAPI\InvestBroker.FinamAPI.csproj", "{D005AB63-D980-4E4A-8F95-5BE542A0588F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvestBroker.TinkoffAPI", "InvestBroker.TInkoffAPI\InvestBroker.TinkoffAPI.csproj", "{7C8D8313-CAFA-4FDA-AC9C-92DC1A0929D4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvestCoreService.API", "InvestCoreService.WebAPI\InvestCoreService.API.csproj", "{D67E1800-4351-47A8-A544-E37C5D669A7D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvestCoreService.Domain", "InvestCoreService.Domain\InvestCoreService.Domain.csproj", "{0566FF8B-F30A-4898-8626-CFBD80A79DDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvestCoreService.Application", "InvestCoreService.Application\InvestCoreService.Application.csproj", "{A4D035FB-D2A6-4B5E-87EB-51424358ECFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D005AB63-D980-4E4A-8F95-5BE542A0588F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D005AB63-D980-4E4A-8F95-5BE542A0588F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D005AB63-D980-4E4A-8F95-5BE542A0588F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D005AB63-D980-4E4A-8F95-5BE542A0588F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C8D8313-CAFA-4FDA-AC9C-92DC1A0929D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C8D8313-CAFA-4FDA-AC9C-92DC1A0929D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C8D8313-CAFA-4FDA-AC9C-92DC1A0929D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C8D8313-CAFA-4FDA-AC9C-92DC1A0929D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D67E1800-4351-47A8-A544-E37C5D669A7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D67E1800-4351-47A8-A544-E37C5D669A7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D67E1800-4351-47A8-A544-E37C5D669A7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D67E1800-4351-47A8-A544-E37C5D669A7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0566FF8B-F30A-4898-8626-CFBD80A79DDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0566FF8B-F30A-4898-8626-CFBD80A79DDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0566FF8B-F30A-4898-8626-CFBD80A79DDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0566FF8B-F30A-4898-8626-CFBD80A79DDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4D035FB-D2A6-4B5E-87EB-51424358ECFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4D035FB-D2A6-4B5E-87EB-51424358ECFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4D035FB-D2A6-4B5E-87EB-51424358ECFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4D035FB-D2A6-4B5E-87EB-51424358ECFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D005AB63-D980-4E4A-8F95-5BE542A0588F} = {C7EA9CC4-F086-491A-9A2A-6E47466AC11D}
+		{7C8D8313-CAFA-4FDA-AC9C-92DC1A0929D4} = {C7EA9CC4-F086-491A-9A2A-6E47466AC11D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EEBEE7B9-6840-456E-8EE1-7F3E1D070CAD}
+	EndGlobalSection
+EndGlobal

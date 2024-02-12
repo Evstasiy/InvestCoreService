@@ -1,0 +1,9 @@
+﻿using InvestCoreService.Domain.Models.SecurityExchangeModels;
+
+namespace InvestCoreService.Domain.Requests.GetPotentialBonds
+{
+    public class GetPotentialBondsResponse
+    {
+        public List<Bond> PotentialBonds { get; set; }
+    }
+}
