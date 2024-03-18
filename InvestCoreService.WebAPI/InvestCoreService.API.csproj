@@ -16,6 +16,8 @@
     <ProjectReference Include="..\InvestBroker.TInkoffAPI\InvestBroker.TinkoffAPI.csproj" />
     <ProjectReference Include="..\InvestCoreService.Application\InvestCoreService.Application.csproj" />
     <ProjectReference Include="..\InvestCoreService.Domain\InvestCoreService.Domain.csproj" />
+    <ProjectReference Include="..\InvestCoreService.Infrastructure\InvestCoreService.Infrastructure.csproj" />
+    <ProjectReference Include="..\InvestCoreService.Persistence.Postgres\InvestCoreService.Persistence.Postgres.csproj" />
   </ItemGroup>
 
 </Project>

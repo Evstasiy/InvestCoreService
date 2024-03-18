@@ -13,7 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvestCoreService.API", "In
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvestCoreService.Domain", "InvestCoreService.Domain\InvestCoreService.Domain.csproj", "{0566FF8B-F30A-4898-8626-CFBD80A79DDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvestCoreService.Application", "InvestCoreService.Application\InvestCoreService.Application.csproj", "{A4D035FB-D2A6-4B5E-87EB-51424358ECFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvestCoreService.Application", "InvestCoreService.Application\InvestCoreService.Application.csproj", "{A4D035FB-D2A6-4B5E-87EB-51424358ECFD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistences", "Persistences", "{9AB1EA28-91E8-482F-8B56-AA0F9E0AAC03}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvestCoreService.Persistence.Postgres", "InvestCoreService.Persistence.Postgres\InvestCoreService.Persistence.Postgres.csproj", "{49A648D1-9106-4B8C-99A1-2CC7DF84D525}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvestCoreService.Infrastructure", "InvestCoreService.Infrastructure\InvestCoreService.Infrastructure.csproj", "{85EA5876-3AA8-4997-8EF9-EA5E9EC00780}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +47,14 @@ Global
 		{A4D035FB-D2A6-4B5E-87EB-51424358ECFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4D035FB-D2A6-4B5E-87EB-51424358ECFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4D035FB-D2A6-4B5E-87EB-51424358ECFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49A648D1-9106-4B8C-99A1-2CC7DF84D525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49A648D1-9106-4B8C-99A1-2CC7DF84D525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49A648D1-9106-4B8C-99A1-2CC7DF84D525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49A648D1-9106-4B8C-99A1-2CC7DF84D525}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85EA5876-3AA8-4997-8EF9-EA5E9EC00780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85EA5876-3AA8-4997-8EF9-EA5E9EC00780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85EA5876-3AA8-4997-8EF9-EA5E9EC00780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85EA5876-3AA8-4997-8EF9-EA5E9EC00780}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +62,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{D005AB63-D980-4E4A-8F95-5BE542A0588F} = {C7EA9CC4-F086-491A-9A2A-6E47466AC11D}
 		{7C8D8313-CAFA-4FDA-AC9C-92DC1A0929D4} = {C7EA9CC4-F086-491A-9A2A-6E47466AC11D}
+		{49A648D1-9106-4B8C-99A1-2CC7DF84D525} = {9AB1EA28-91E8-482F-8B56-AA0F9E0AAC03}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EEBEE7B9-6840-456E-8EE1-7F3E1D070CAD}

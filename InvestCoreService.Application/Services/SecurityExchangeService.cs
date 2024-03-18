@@ -1,19 +1,13 @@
-﻿using InvestBroker.FinamAPI;
-using InvestBroker.TinkoffAPI;
-using InvestCoreService.Application.Bonds;
-using InvestCoreService.Application.BrokerAPI;
-using InvestCoreService.Domain.Models.SecurityExchangeModels;
-using InvestCoreService.Domain.Requests.GetPotentialBonds;
-using InvestCoreService.API.Services.Interfaces;
-using Microsoft.AspNetCore.Http;
+﻿using InvestCoreService.Application.BrokerAPI;
+using InvestCoreService.Application.Interfaces.Services;
 
 namespace InvestCoreService.API.Services
 {
     public class SecurityExchangeService : ISecurityExchangeService
     {
-        private List<IBaseBroker> brokers;
+        //private List<IBaseBroker> brokers;
 
-        public SecurityExchangeService() 
+        /*public SecurityExchangeService() 
         {
             this.brokers = new List<IBaseBroker>()
             {
@@ -36,6 +30,6 @@ namespace InvestCoreService.API.Services
             };
 
             return response;
-        }
+        }*/
     }
 }

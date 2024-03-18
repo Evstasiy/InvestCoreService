@@ -1,6 +1,6 @@
-﻿using InvestCoreService.Domain.Requests.GetPotentialBonds;
-using InvestCoreService.API.Services.Interfaces;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using InvestCoreService.Application.Interfaces.Services;
+using InvestCoreService.API.Contracts.Requests.GetPotentialBonds;
 
 namespace InvestCoreService.API.Controllers
 {
@@ -21,9 +21,9 @@ namespace InvestCoreService.API.Controllers
         public async Task<ActionResult<GetPotentialBondsResponse>> GetPotentialBondsAsync(int count) 
         {
             logger.LogInformation("SecurityExchangeController.GetPotentialBondsAsync - Time: {dateTime}; Count: {count}", DateTime.Now.ToShortTimeString(), count);
-            var response = await service.GetPotentialBondsAsync(count);
+            //var response = await service.GetPotentialBondsAsync(count);
 
-            return response;
+            return Ok();//response;
         }
     }
 }

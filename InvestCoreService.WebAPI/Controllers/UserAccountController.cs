@@ -1,5 +1,5 @@
 ﻿using Google.Api;
-using InvestCoreService.API.Services.Interfaces;
+using InvestCoreService.Application.Interfaces.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using System;

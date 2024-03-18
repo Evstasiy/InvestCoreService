@@ -4,9 +4,22 @@ namespace InvestCoreService.Domain.Models.BaseModels
 {
     public class User : IUserBase
     {
-        public int Id { get; set; }
-        public string? Name { get; set; }
-        public string? Email { get; set; }
-        public string? Password { get; set; }
+        private User(int userId, string? name, string? email, string? password)
+        {
+            UserId = userId;
+            Name = name;
+            Email = email;
+            Password = password;
+        }
+
+        public int UserId { get; private set; }
+        public string? Name { get; private set; }
+        public string? Email { get; private set; }
+        public string? Password { get; private set; }
+
+        public static User Create(int userId, string? name, string? email, string? password)
+        {
+            return new User(userId, name, email, password);
+        }
     }
 }

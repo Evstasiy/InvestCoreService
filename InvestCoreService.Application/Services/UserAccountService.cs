@@ -1,20 +1,25 @@
-﻿using InvestBroker.FinamAPI;
-using InvestBroker.TinkoffAPI;
-using InvestCoreService.Application.BrokerAPI;
+﻿using InvestCoreService.Application.BrokerAPI;
 using InvestCoreService.Domain.Models.SecurityExchangeModels;
-using InvestCoreService.API.Services.Interfaces;
+using InvestCoreService.Application.Interfaces.Services;
+using InvestCoreService.Infrastructure.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace InvestCoreService.API.Services
 {
     public class UserAccountService : IUserAccountService
     {
-        public UserAccountService()
+        private IDbContext dbContext {  get; set; }
+
+        public UserAccountService(IDbContext dbContext)
         {
-            
+            this.dbContext = dbContext;
+            var l = dbContext.Users.ToList();
         }
 
         public async Task UploadAllUserBondsInBrokersAsync(int userId)
         {
+            var l = await dbContext.Users.ToListAsync();
+            //DTO to entity autoMaper
             var brokers = GetAllConnectUserBrokers();
             List<Bond> userBonds = new List<Bond>();
             foreach (var broker in brokers)
@@ -26,12 +31,7 @@ namespace InvestCoreService.API.Services
 
         private List<IBaseBroker> GetAllConnectUserBrokers()
         {
-            var brokers = new List<IBaseBroker>()
-            {
-                new TinkoffCore(""),
-                new FinamCore("")
-            };
-            return brokers;
+            return null;
         }
     }
 }

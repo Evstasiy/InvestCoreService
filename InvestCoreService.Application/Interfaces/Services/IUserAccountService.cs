@@ -1,4 +1,4 @@
-﻿namespace InvestCoreService.API.Services.Interfaces
+﻿namespace InvestCoreService.Application.Interfaces.Services
 {
     public interface IUserAccountService
     {
