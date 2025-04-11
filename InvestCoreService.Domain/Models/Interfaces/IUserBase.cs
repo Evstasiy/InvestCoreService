@@ -6,6 +6,6 @@ namespace InvestCoreService.Domain.Models.Interfaces
         public int UserId { get;}
         public string? Name { get; }
         public string? Email { get; }
-        public string? Password { get; }
+        public string? PasswordHash { get; }
     }
 }

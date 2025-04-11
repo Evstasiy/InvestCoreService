@@ -1,9 +1,11 @@
 ﻿using InvestCoreService.API.Contracts.Requests.GetPotentialBonds;
 using Microsoft.AspNetCore.Mvc;
 using InvestCoreService.Application.Interfaces.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace InvestCoreService.API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class SecurityExchangeController : ControllerBase

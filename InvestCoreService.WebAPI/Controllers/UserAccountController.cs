@@ -1,8 +1,7 @@
-﻿using Google.Api;
+﻿using InvestCoreService.API.Contracts.Requests;
 using InvestCoreService.Application.Interfaces.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Security.Claims;
 
 namespace InvestCoreService.API.Controllers
@@ -19,8 +18,22 @@ namespace InvestCoreService.API.Controllers
             this.accountService = accountService;
         }
 
+        [HttpGet("register")]
+        public async Task<ActionResult> RegisterAsync(UserRegisterRequest request)
+        {
+            await this.accountService.Register(request.UserName, request.Email, request.Password);
+            return Ok();
+        }
+        
         [HttpGet("login")]
-        public async Task<ActionResult> SetLogin()
+        public async Task<ActionResult> SetLoginAsync(UserLoginRequest request)
+        {
+            await this.accountService.Login(request.Email, request.Password);
+            return Ok();
+        }
+        
+        [HttpGet("logout")]
+        public async Task<ActionResult> LogoutAsync()
         {
             if (!HttpContext.User.Identity.IsAuthenticated)
             {
@@ -31,7 +44,8 @@ namespace InvestCoreService.API.Controllers
 
             return Ok();
         }
-        
+
+        /*
         [HttpGet("connectToBrokers")]
         public async Task<ActionResult> ConnectToBrokersAsync()
         {
@@ -48,6 +62,6 @@ namespace InvestCoreService.API.Controllers
             var userId = 1;
             await accountService.UploadAllUserBondsInBrokersAsync(userId);
             return Ok();
-        }
+        }*/
     }
 }

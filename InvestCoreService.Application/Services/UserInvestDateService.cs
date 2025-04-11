@@ -5,10 +5,7 @@ namespace InvestCoreService.API.Services
 {
     public class UserInvestDateService : IUserInvestDateService
     {
-        private List<IBaseBroker> brokers;
+        private List<IBaseBroker>? brokers;
 
-        public UserInvestDateService()
-        {
-        }
     }
 }
