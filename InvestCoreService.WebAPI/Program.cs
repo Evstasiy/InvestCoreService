@@ -10,10 +10,17 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using InvestCoreService.Application.Models.Mapping;
+using System.Reflection;
+using Microsoft.Extensions.DependencyInjection;
+using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.AddSingleton(provider => new MapperConfiguration(cfg =>
+{
+    cfg.AddProfile<MappingProfile>();
+}).CreateMapper());
+
 builder.Services.AddSingleton<ISecurityExchangeService, SecurityExchangeService>();
 builder.Services.AddSingleton<IPasswordHasher, PasswordHasher>();
 builder.Services.AddSingleton<IKeyGenerateService, JwtService>();

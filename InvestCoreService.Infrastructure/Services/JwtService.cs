@@ -25,10 +25,14 @@ namespace InvestCoreService.Infrastructure.Services
 
         public string GenerateToken(User user)
         {
-            var claims = new[]
+            var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString())
             };
+            foreach (var role in user.UserRoles) 
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role.ToString()));
+            }
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secretKey));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

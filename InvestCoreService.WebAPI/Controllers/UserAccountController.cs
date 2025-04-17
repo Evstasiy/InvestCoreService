@@ -18,14 +18,14 @@ namespace InvestCoreService.API.Controllers
             this.accountService = accountService;
         }
 
-        [HttpGet("register")]
+        [HttpPost("register")]
         public async Task<ActionResult> RegisterAsync(UserRegisterRequest request)
         {
             await this.accountService.Register(request.UserName, request.Email, request.Password);
             return Ok();
         }
         
-        [HttpGet("login")]
+        [HttpPost("login")]
         public async Task<ActionResult> SetLoginAsync(UserLoginRequest request)
         {
             await this.accountService.Login(request.Email, request.Password);
