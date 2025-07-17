@@ -1,4 +1,4 @@
-﻿using InvestCoreService.Application.Bonds;
+﻿using InvestCoreService.Domain.Models.Interfaces;
 using InvestCoreService.Domain.Models.SecurityExchangeModels;
 using InternalBond = InvestCoreService.Domain.Models.SecurityExchangeModels.Bond;
 

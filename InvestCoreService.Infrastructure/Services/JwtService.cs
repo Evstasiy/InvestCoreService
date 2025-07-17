@@ -1,7 +1,8 @@
-﻿using InvestCoreService.Application.Interfaces.Auth;
-using InvestCoreService.Domain.Models.BaseModels;
+﻿using InvestCoreService.Domain.Models.BaseModels;
+using InvestCoreService.Domain.Models.Interfaces.Auth;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using System.Data;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -27,12 +28,9 @@ namespace InvestCoreService.Infrastructure.Services
         {
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString())
+                new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
+                new Claim("access_level", user.AccessLevel.ToString())
             };
-            foreach (var role in user.UserRoles) 
-            {
-                claims.Add(new Claim(ClaimTypes.Role, role.ToString()));
-            }
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secretKey));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

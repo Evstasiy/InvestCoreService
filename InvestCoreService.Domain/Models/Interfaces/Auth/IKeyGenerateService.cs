@@ -1,6 +1,6 @@
 ﻿using InvestCoreService.Domain.Models.BaseModels;
 
-namespace InvestCoreService.Application.Interfaces.Auth
+namespace InvestCoreService.Domain.Models.Interfaces.Auth
 {
     public interface IKeyGenerateService
     {

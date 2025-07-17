@@ -1,25 +1,24 @@
 ﻿using InvestCoreService.Application.Interfaces.Services;
-using InvestCoreService.Application.Interfaces.Database;
 using InvestCoreService.Application.Models.DTOs;
-using Microsoft.EntityFrameworkCore;
-using InvestCoreService.Application.Interfaces.Auth;
 using AutoMapper;
 using InvestCoreService.Domain.Models.BaseModels;
 using System.Linq.Expressions;
-using System.Security.Claims;
+using InvestCoreService.Domain.Models.Interfaces.Database;
+using InvestCoreService.Domain.Models.Interfaces.Auth;
+using InvestCoreService.Domain.Models.Enums;
 
 namespace InvestCoreService.API.Services
 {
     public class UserAccountService : IUserAccountService
     {
-        private IDbContext dbContext {  get; set; }
+        private IRepository<User> _userRepository {  get; set; }
         private IPasswordHasher passwordHasher {  get; set; }
         private IKeyGenerateService keyGenerateService {  get; set; }
         private IMapper mapper {  get; set; }
 
-        public UserAccountService(IDbContext dbContext, IPasswordHasher passwordHasher, IKeyGenerateService keyGenerateService, IMapper mapper)
+        public UserAccountService(IRepository<User> userRepository, IPasswordHasher passwordHasher, IKeyGenerateService keyGenerateService, IMapper mapper)
         {
-            this.dbContext = dbContext;
+            _userRepository = userRepository;
             this.passwordHasher = passwordHasher;
             this.keyGenerateService = keyGenerateService;
             this.mapper = mapper;
@@ -32,16 +31,18 @@ namespace InvestCoreService.API.Services
             { 
                 Name = userName,
                 Email = email,
-                PasswordHash = passwordHash
+                PasswordHash = passwordHash,
+                AccessLevel = 0
             };
            
-            await dbContext.Users.AddAsync(newUser);
-            await dbContext.SaveChangesAsync();
+            await _userRepository.AddAsync(newUser);
         }
 
         public async Task<string> Login(string email, string password)
         {
-            var user = await dbContext.Users.AsNoTracking().FirstOrDefaultAsync(x => x.Email == email);
+            /*
+            var result = await _userRepository.GetByFilterAsync(x => x.Email == email);
+            var user = result.First();
             if (user == null)
             {
                 throw new UnauthorizedAccessException("Invalid credentials");
@@ -52,11 +53,11 @@ namespace InvestCoreService.API.Services
             {
                 throw new UnauthorizedAccessException("Invalid credentials");
             }
+            */
+            var users = await _userRepository.GetAllAsync();
+            var user = users.FirstOrDefault();
 
-            user.UserRoles = new List<string>()
-            {
-                "Admin"
-            };
+            user.AccessLevel = (int)AccessLevel.Admin;
             var token = keyGenerateService.GenerateToken(user);
 
             return token;
@@ -64,7 +65,7 @@ namespace InvestCoreService.API.Services
 
         public async Task<List<UserDTO>> GetList(Expression<Func<User, bool>> predicate)
         {
-            var users = await dbContext.Users.AsNoTracking().Where(predicate).ToListAsync();
+            var users = await _userRepository.GetByFilterAsync(predicate);
             var usersDtos = mapper.Map<List<UserDTO>>(users);
             return usersDtos;
         }

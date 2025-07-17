@@ -1,6 +1,5 @@
 ﻿using InvestBroker.FinamAPI.Bonds;
-using InvestCoreService.Application.Bonds;
-using InvestCoreService.Application.BrokerAPI;
+using InvestCoreService.Domain.Models.Interfaces;
 
 namespace InvestBroker.FinamAPI
 {

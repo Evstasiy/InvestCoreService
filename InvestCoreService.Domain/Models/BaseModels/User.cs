@@ -4,15 +4,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InvestCoreService.Domain.Models.BaseModels
 {
-    public class User //: IUserBase
+    public class User
     {
         [Key]
         public int UserId { get; set; }
         public required string Name { get; set; }
         public string? Email { get; set; }
         public required string PasswordHash { get; set; }
-
-        [NotMapped]
-        public virtual List<string> UserRoles { get; set; }
+        public required int AccessLevel { get; set; }
     }
 }

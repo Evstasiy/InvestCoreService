@@ -1,6 +1,4 @@
-﻿using InvestCoreService.Application.Bonds;
-
-namespace InvestCoreService.Application.BrokerAPI
+﻿namespace InvestCoreService.Domain.Models.Interfaces
 {
     public interface IBaseBroker
     {

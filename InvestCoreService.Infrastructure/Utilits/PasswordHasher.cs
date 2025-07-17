@@ -1,4 +1,4 @@
-﻿using InvestCoreService.Application.Interfaces.Auth;
+﻿using InvestCoreService.Domain.Models.Interfaces.Auth;
 
 namespace InvestCoreService.Infrastructure.Utilits
 {

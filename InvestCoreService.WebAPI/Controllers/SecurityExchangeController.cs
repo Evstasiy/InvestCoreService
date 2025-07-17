@@ -1,7 +1,7 @@
 ﻿using InvestCoreService.API.Contracts.Requests.GetPotentialBonds;
 using Microsoft.AspNetCore.Mvc;
-using InvestCoreService.Application.Interfaces.Services;
 using Microsoft.AspNetCore.Authorization;
+using InvestCoreService.Domain.Models.Interfaces.Services;
 
 namespace InvestCoreService.API.Controllers
 {

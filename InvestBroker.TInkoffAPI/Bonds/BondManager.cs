@@ -1,6 +1,6 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using InvestBroker.TinkoffAPI.Extensions;
-using InvestCoreService.Application.Bonds;
+using InvestCoreService.Domain.Models.Interfaces;
 using Tinkoff.InvestApi;
 using Tinkoff.InvestApi.V1;
 using InternalBond = InvestCoreService.Domain.Models.SecurityExchangeModels.Bond;

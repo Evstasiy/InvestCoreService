@@ -1,11 +1,18 @@
-﻿using InvestCoreService.Application.BrokerAPI;
-using InvestCoreService.Application.Interfaces.Services;
+﻿using InvestCoreService.Application.Interfaces.Services;
+using InvestCoreService.Domain.Models.Interfaces;
+using InvestCoreService.Domain.Models.Interfaces.Services;
+using InvestCoreService.Domain.Models.SecurityExchangeModels;
 
 namespace InvestCoreService.API.Services
 {
     public class SecurityExchangeService : ISecurityExchangeService
     {
-        //private List<IBaseBroker> brokers;
+        private List<IBaseBroker> brokers;
+
+        public Task<List<Bond>> GetPotentialBondsAsync(int count)
+        {
+            throw new NotImplementedException();
+        }
 
         /*public SecurityExchangeService() 
         {

@@ -1,6 +1,6 @@
 ﻿using InvestCoreService.Domain.Models.SecurityExchangeModels;
 
-namespace InvestCoreService.Application.Bonds
+namespace InvestCoreService.Domain.Models.Interfaces
 {
     public interface IBondManager
     {

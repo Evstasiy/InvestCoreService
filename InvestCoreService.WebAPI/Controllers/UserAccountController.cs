@@ -1,8 +1,6 @@
 ﻿using InvestCoreService.API.Contracts.Requests;
 using InvestCoreService.Application.Interfaces.Services;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
 
 namespace InvestCoreService.API.Controllers
 {
@@ -10,11 +8,9 @@ namespace InvestCoreService.API.Controllers
     [Route("api/[controller]")]
     public class UserAccountController : ControllerBase
     {
-        private ILogger<UserAccountController> logger;
         private IUserAccountService accountService;
         public UserAccountController(ILogger<UserAccountController> logger, IUserAccountService accountService)
         {
-            this.logger = logger;
             this.accountService = accountService;
         }
 
@@ -28,20 +24,13 @@ namespace InvestCoreService.API.Controllers
         [HttpPost("login")]
         public async Task<ActionResult> SetLoginAsync(UserLoginRequest request)
         {
-            await this.accountService.Login(request.Email, request.Password);
-            return Ok();
+            var token = await this.accountService.Login(request.Email, request.Password);
+            return Ok(token);
         }
         
         [HttpGet("logout")]
         public async Task<ActionResult> LogoutAsync()
         {
-            if (!HttpContext.User.Identity.IsAuthenticated)
-            {
-                var claimsIdentity = new ClaimsIdentity("Undefined");
-                var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
-                await HttpContext.SignInAsync(claimsPrincipal);
-            }
-
             return Ok();
         }
 

@@ -1,6 +1,5 @@
 ﻿using InvestBroker.TinkoffAPI.Bonds;
-using InvestCoreService.Application.Bonds;
-using InvestCoreService.Application.BrokerAPI;
+using InvestCoreService.Domain.Models.Interfaces;
 using Tinkoff.InvestApi;
 
 namespace InvestBroker.TinkoffAPI

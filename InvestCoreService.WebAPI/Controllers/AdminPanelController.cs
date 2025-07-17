@@ -1,15 +1,12 @@
-﻿using InvestCoreService.API.Contracts.Requests;
-using InvestCoreService.Application.Interfaces.Services;
+﻿using InvestCoreService.Application.Interfaces.Services;
 using InvestCoreService.Domain.Models.Enums;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
 
 namespace InvestCoreService.API.Controllers
 {
-    [Authorize(Roles = UserRoles.Admin)]
     [ApiController]
+    [Authorize(Policy = nameof(AccessLevel.Admin))]
     [Route("api/[controller]")]
     public class AdminPanelController : ControllerBase
     {
