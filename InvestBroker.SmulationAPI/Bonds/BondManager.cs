@@ -10,7 +10,12 @@ namespace InvestBroker.SmulationAPI.Bonds
         {
         }
 
-        public async Task<IEnumerable<Bond>> GetAllSecurityExchangeBondsAsync()
+        public Task<IEnumerable<Bond>> GetAllSecurityExchangeBondsAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<IEnumerable<Bond>> GetAllUserBondsAsync(int userId)
         {
             var bonds = new List<Bond>()
             {
@@ -61,6 +66,11 @@ namespace InvestBroker.SmulationAPI.Bonds
                 }
             };
             return bonds;
+        }
+
+        public Task<IEnumerable<Bond>> GetAllUserBondsAsync(int userId, int count)
+        {
+            throw new NotImplementedException();
         }
     }
 }

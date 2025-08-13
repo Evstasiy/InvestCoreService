@@ -7,7 +7,7 @@ using InternalBond = InvestCoreService.Domain.Models.SecurityExchangeModels.Bond
 
 namespace InvestBroker.TinkoffAPI.Bonds
 {
-    public class BondManager : IBondManager
+    public class BondManager //: IBondManager
     {
         private InvestApiClient apiClient;
 
@@ -16,7 +16,12 @@ namespace InvestBroker.TinkoffAPI.Bonds
             this.apiClient = apiClient;
         }
 
-        public async Task<IEnumerable<InternalBond>> GetAllSecurityExchangeBondsAsync()
+        public Task<IEnumerable<InternalBond>> GetAllSecurityExchangeBondsAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<IEnumerable<InternalBond>> GetAllUserBondsAsync()
         {
             var bonds = apiClient.Instruments.Bonds().Instruments.ToList();
             List<(Bond, int)> bondsVolumes = new List<(Bond, int)>();
@@ -39,6 +44,11 @@ namespace InvestBroker.TinkoffAPI.Bonds
                 bondsVolumes.Add((bond, int.Parse(vol.ToString())));
             }
             return bondsVolumes.Select(x=> x.Item1.ToInternalBond()).Take(10);
+        }
+
+        public Task<IEnumerable<InternalBond>> GetAllUserBondsAsync(int userId, int count)
+        {
+            throw new NotImplementedException();
         }
     }
 }

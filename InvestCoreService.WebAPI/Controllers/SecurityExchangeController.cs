@@ -20,7 +20,7 @@ namespace InvestCoreService.API.Controllers
         }
 
         [HttpGet("bond/potential/get/{count}")]
-        public async Task<ActionResult<GetPotentialBondsResponse>> GetPotentialBondsAsync(int count) 
+        public async Task<ActionResult<GetRecomendationBondsResponse>> GetPotentialBondsAsync(int count) 
         {
             logger.LogInformation("SecurityExchangeController.GetPotentialBondsAsync - Time: {dateTime}; Count: {count}", DateTime.Now.ToShortTimeString(), count);
             //var response = await service.GetPotentialBondsAsync(count);

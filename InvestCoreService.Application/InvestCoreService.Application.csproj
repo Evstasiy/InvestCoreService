@@ -15,8 +15,4 @@
     <ProjectReference Include="..\InvestCoreService.Domain\InvestCoreService.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Bonds\" />
-  </ItemGroup>
-
 </Project>

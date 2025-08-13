@@ -9,7 +9,10 @@ namespace InvestBroker.TinkoffAPI.Extensions
         {
             return new InvestCoreService.Domain.Models.SecurityExchangeModels.Bond()
             {
-                Isin = bond.Isin
+                Isin = bond.Isin,
+                Exchange = bond.Exchange,
+                Name = bond.Name,
+                Ticker = bond.Ticker
             };
         }
     }

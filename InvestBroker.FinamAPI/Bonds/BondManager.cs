@@ -4,26 +4,31 @@ using InternalBond = InvestCoreService.Domain.Models.SecurityExchangeModels.Bond
 
 namespace InvestBroker.FinamAPI.Bonds
 {
-    public class BondManager : IBondManager
+    public class BondManager //: IBondManager
     {
-        Bond b;
-        public BondManager(string token) 
+        public Task<IEnumerable<InternalBond>> GetAllSecurityExchangeBondsAsync()
         {
-            b = new Bond() { Isin = token };
+            throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<InternalBond>> GetAllSecurityExchangeBondsAsync()
+        public async Task<IEnumerable<InternalBond>> GetAllUserBondsAsync()
         {
             var bonds = new List<Bond>()
             {
                 new InternalBond()
                 {
                     Name = "FinamBond",
-                    Isin = "FinamISIN1"
-                },
-                b
+                    Isin = "FinamISIN1",
+                    Exchange = "Finam",
+                    Ticker = "SU26222"
+                }
             };
             return bonds;
+        }
+
+        public Task<IEnumerable<InternalBond>> GetAllUserBondsAsync(int userId, int count)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -8,7 +8,7 @@ namespace InvestBroker.SmulationAPI
         public string BrokerName => "Simulation";
 
         private IBondManager BondManager { get; }
-        public SimulationCore(string token)
+        public SimulationCore()
         {
             BondManager = new BondManager();
         }

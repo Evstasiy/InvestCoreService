@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvestCoreService.Persisten
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvestCoreService.Infrastructure", "InvestCoreService.Infrastructure\InvestCoreService.Infrastructure.csproj", "{85EA5876-3AA8-4997-8EF9-EA5E9EC00780}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvestBroker.SmulationAPI", "InvestBroker.SmulationAPI\InvestBroker.SmulationAPI.csproj", "{B4925E5F-C755-4225-8AAD-B2B3860F09A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvestBroker.SmulationAPI", "InvestBroker.SmulationAPI\InvestBroker.SmulationAPI.csproj", "{B4925E5F-C755-4225-8AAD-B2B3860F09A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvestCoreService.Tests", "InvestCoreService.Tests\InvestCoreService.Tests.csproj", "{12C23C0E-90B3-4CF6-AEE2-C943F5AC5AFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{B4925E5F-C755-4225-8AAD-B2B3860F09A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4925E5F-C755-4225-8AAD-B2B3860F09A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4925E5F-C755-4225-8AAD-B2B3860F09A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12C23C0E-90B3-4CF6-AEE2-C943F5AC5AFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12C23C0E-90B3-4CF6-AEE2-C943F5AC5AFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12C23C0E-90B3-4CF6-AEE2-C943F5AC5AFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12C23C0E-90B3-4CF6-AEE2-C943F5AC5AFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

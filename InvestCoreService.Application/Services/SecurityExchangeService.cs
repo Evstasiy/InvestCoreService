@@ -7,36 +7,42 @@ namespace InvestCoreService.API.Services
 {
     public class SecurityExchangeService : ISecurityExchangeService
     {
-        private List<IBaseBroker> brokers;
+        private IEnumerable<IBaseBroker> _brokers;
 
-        public Task<List<Bond>> GetPotentialBondsAsync(int count)
+        public SecurityExchangeService(IEnumerable<IBaseBroker> baseBrokers) 
         {
-            throw new NotImplementedException();
+            _brokers = baseBrokers;
         }
 
-        /*public SecurityExchangeService() 
+        public async Task<List<Bond>> GetUserBondsAsync(int userId)
         {
-            this.brokers = new List<IBaseBroker>()
-            {
-                new TinkoffCore(""),
-                new FinamCore("")
-            };
-        }
+            var userBonds = new List<Bond>();
 
-        public async Task<GetPotentialBondsResponse> GetPotentialBondsAsync(int count)
-        {
-            List<Bond> bonds = new List<Bond>();
-            foreach (var broker in brokers)
+            foreach (var broker in _brokers)
             {
-                var bondsInBroker = await broker.GetBondManager().GetAllSecurityExchangeBondsAsync();
-                bonds.AddRange(bondsInBroker);
+                var bonds = await broker.GetBondManager().GetAllUserBondsAsync(userId);
+                userBonds.AddRange(bonds);
             }
-            var response = new GetPotentialBondsResponse()
-            {
-                PotentialBonds = bonds.ToList()
-            };
+            return userBonds;
+        }
 
-            return response;
-        }*/
+        public async Task<List<Bond>> GetRecomendationBondsAsync(int userId, int count)
+        {
+            var userBonds = new List<Bond>();
+
+            /*foreach (var broker in _brokers)
+            {
+                /*
+                 IBrokerTokenStore внутри брокеров GPT ответ
+                 */
+                /*var bonds = await broker.GetBondManager().GetAllUserBondsAsync(userId);
+                userBonds.AddRange(bonds);
+            }*/
+            /*
+             Тут нужно рассчитать бумаги для 
+             */
+
+            return userBonds;
+        }
     }
 }

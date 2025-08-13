@@ -3,16 +3,16 @@ using InvestCoreService.Domain.Models.Interfaces;
 
 namespace InvestBroker.FinamAPI
 {
-    public class FinamCore : IBaseBroker
+    /*public class FinamCore : IBaseBroker
     {
         public string BrokerName => "Finam";
 
         private IBondManager BondManager { get; }
-        public FinamCore(string token)
+        public FinamCore()
         {
-            BondManager = new BondManager(token);
+            BondManager = new BondManager();
         }
 
         public IBondManager GetBondManager() => BondManager;
-    }
+    }*/
 }

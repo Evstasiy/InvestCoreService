@@ -4,7 +4,7 @@ using Tinkoff.InvestApi;
 
 namespace InvestBroker.TinkoffAPI
 {
-    public class TinkoffCore : IBaseBroker
+    /*public class TinkoffCore : IBaseBroker
     {
         public IBondManager BondManager { get; set; }
 
@@ -19,5 +19,5 @@ namespace InvestBroker.TinkoffAPI
         }
 
         public IBondManager GetBondManager() => BondManager;
-    }
+    }*/
 }

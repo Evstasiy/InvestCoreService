@@ -18,6 +18,9 @@ using InvestCoreService.Infrastructure.Database.BufferDb;
 using InvestCoreService.API.Handlers;
 using InvestCoreService.Domain.Models.Enums;
 using Microsoft.AspNetCore.Authorization;
+using InvestCoreService.Domain.Models.Interfaces;
+using InvestBroker.SmulationAPI;
+using InvestBroker.FinamAPI;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,10 +29,16 @@ builder.Services.AddSingleton(provider => new MapperConfiguration(cfg =>
     cfg.AddProfile<MappingProfile>();
 }).CreateMapper());
 
-builder.Services.AddSingleton<ISecurityExchangeService, SecurityExchangeService>();
 builder.Services.AddSingleton<IPasswordHasher, PasswordHasher>();
 builder.Services.AddSingleton<IKeyGenerateService, JwtService>();
 builder.Services.AddScoped<IUserAccountService, UserAccountService>();
+
+//builder.Services.AddScoped<IRepository<User>, UserRepository>();
+builder.Services.AddScoped<IRepository<User>, UserTextRepository>();
+builder.Services.AddSingleton<IBaseBroker, SimulationCore>();
+//builder.Services.AddSingleton<IBaseBroker, FinamCore>();
+
+builder.Services.AddSingleton<ISecurityExchangeService, SecurityExchangeService>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -99,8 +108,7 @@ builder.Services.AddDbContext<AppDbConext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("DbConnectString"));
 });
-//builder.Services.AddScoped<IRepository<User>, UserRepository>();
-builder.Services.AddScoped<IRepository<User>, UserTextRepository>();
+
 
 /*builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie();*/
